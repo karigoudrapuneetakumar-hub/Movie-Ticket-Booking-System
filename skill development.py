@@ -68,7 +68,7 @@ def book_ticket():
     col=int(input("Enter seat column: "))
 
     if seats[row][col]=="1":
-        print("❌ Seat already booked!")
+        print("Seat already booked!")
         return
 
     seats[row][col]="1"
@@ -80,27 +80,27 @@ def book_ticket():
     save_seats(seats)
     save_booking(ticket)
 
-    print("\n🎟 Ticket Confirmed!")
+    print("\nTicket Confirmed!")
     print(ticket)
 
 def undo_booking():
     if not booking_stack:
-        print("⚠ No bookings to undo!")
+        print(" No bookings to undo!")
         return
     last=booking_stack.pop()
-    print("\n↩ Booking undone:",last)
+    print("\nBooking undone:",last)
 
 def view_last_booking():
     if not booking_stack:
-        print("⚠ No bookings yet!")
+        print(" No bookings yet!")
     else:
-        print("\n📌 Last Booking:",booking_stack[-1])
+        print("\n Last Booking:",booking_stack[-1])
 
 def view_booking_queue():
     if booking_queue.empty():
-        print("⚠ Queue empty!")
+        print(" Queue empty!")
         return
-    print("\n🎫 Current Booking Queue:")
+    print("\n Current Booking Queue:")
     temp=list(booking_queue.queue)
     for t in temp:
         print(t)
@@ -124,3 +124,4 @@ def main():
             print("Invalid!")
 
 main()
+
